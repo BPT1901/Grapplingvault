@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>{% if entry %}Edit Entry{% else %}New Entry{% endif %}</h2>
+<form id="entry-form" method="post" action="{% if entry %}/entries/{{ entry._id }}{% else %}/entries/{% endif %}">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" value="{% if entry %}{{ entry.title }}{% endif %}">
+    <label for="category">Category:</label>
+    <input type="text" id="category" name="category" value="{% if entry %}{{ entry.category }}{% endif %}">
+    <label for="entry">Content:</label>
+    <textarea id="entry" name="entry">{% if entry %}{{ entry.entry }}{% endif %}</textarea>
+    <button type="submit">Save</button>
+</form>
+<button class="search_btn" onclick="window.location.href='/'">Search</button>
+
+<script>
+document.getElementById('entry-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+
+    const formAction = form.action;
+    const method = formAction.includes('/entries/') ? 'POST' : 'PUT';
+
+    const response = await fetch(formAction, {
+        method: method,
+        body: formData
+    });
+
+    if (response.ok) {
+        alert('Entry saved successfully!');
+        window.location.href = '/';
+    } else {
+        const errorData = await response.json();
+        alert('Error: ' + JSON.stringify(errorData.detail));
+    }
+});
+</script>
+{% endblock %}

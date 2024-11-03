@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="80" fill="#1d1d1d"/>
+  
+  <!-- Inner Circle Line -->
+  <circle cx="100" cy="100" r="70" fill="none" stroke="#ef4444" stroke-width="1.5"/>
+  
+  <!-- Triangle -->
+  <path d="M60 70 L140 70 L100 145 Z" 
+        fill="none" 
+        stroke="#ff9900" 
+        stroke-width="6"/>
+  
+  <!-- Connection Points -->
+  <circle cx="60" cy="70" r="8" fill="#ff9900"/>
+  <circle cx="140" cy="70" r="8" fill="#ff9900"/>
+  <circle cx="100" cy="145" r="8" fill="#ff9900"/>
+</svg>

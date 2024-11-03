@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Journal Entries</h2>
+<form id="search-form" action="/" method="get">
+    <label for="search">Search:</label>
+    <input type="text" id="search" name="search" placeholder="search via category">
+    <button type="submit">Search</button>
+</form>
+<ul id="entries">
+    {% for entry in entries %}
+    <li>
+        <h3>{{ entry.title }}</h3>
+        <p>{{ entry.entry }}</p>
+        <p><strong>Category:</strong> {{ entry.category }}</p>
+        <a href="/entry/{{ entry._id }}">Edit</a>
+    </li>
+    {% endfor %}
+</ul>
+<button onclick="window.location.href='/entry'">New Entry</button>
+{% endblock %}
