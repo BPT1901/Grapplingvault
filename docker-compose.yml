@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    image: grapplingvault
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGODB_URI=mongodb://host.docker.internal:27017
+      - DATABASE_NAME=jits-journal
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
