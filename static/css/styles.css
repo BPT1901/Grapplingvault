@@ -16,7 +16,6 @@ header {
     background-color: #ff9900;
     padding: 0.5em;
     text-align: center;
-    
 }
 
 .icon {
@@ -40,11 +39,15 @@ header {
 
 main {
     padding: 1em;
+    width: 100%; /* Ensure main takes full width */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 form {
     display: flex;
     flex-direction: column;
+    width: 100%; /* Ensure form takes full width */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 label {
@@ -55,7 +58,8 @@ input, textarea {
     margin-top: 0.5em;
     border-radius: 8px;
     height: 28px;
-    
+    width: 100%; /* Ensure inputs take full width */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 #entry {
@@ -69,6 +73,8 @@ button {
     border: none;
     padding: 0.5em;
     cursor: pointer;
+    width: 100%; /* Ensure button takes full width */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 button:hover {
@@ -79,9 +85,10 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 520px;
+    width: 100%; /* Ensure search button takes full width */
     margin: auto;
     margin-top: 10px;
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 @media (max-width: 600px) {
