@@ -11,7 +11,7 @@
     <textarea id="entry" name="entry">{% if entry %}{{ entry.entry }}{% endif %}</textarea>
     <button type="submit">Save</button>
 </form>
-<button class="search_btn" onclick="window.location.href='/'">Search</button>
+<button class="search_btn" onclick="window.location.href='/search'">Search</button>
 
 <script>
 document.getElementById('entry-form').addEventListener('submit', async function(event) {
